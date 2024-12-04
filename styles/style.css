@@ -1,14 +1,10 @@
+
 /**************/
 /* CSS REMEDY */
 /**************/
 *, *::after, *::before {
   box-sizing:border-box;  
 }
-
-
-
-
-
 
 /*********************/
 /* CUSTOM PROPERTIES */
@@ -17,15 +13,481 @@
 	/* startje */
 	--color-text:#111;
 	--color-background:#eee;
+	--sissy-boy-white: ghostwhite;
+	--whitespace:clamp(1.25em, 5vw, 2em);
 }
-
-
-
-
 
 /****************/
 /* JOUW STYLING */
 /****************/
 
-/* jouw code */
+body {
+	margin: 0;
+}
 
+header{
+	position: sticky;
+	top: 0;
+	background-color: white;
+	z-index: 1;
+
+	display: flex;
+	flex-wrap:wrap;
+	justify-content: space-between;
+
+	padding-bottom: 1em;
+}
+
+/* logo */
+header > a {
+	width: 7em;
+	position: absolute;
+	top: 0.5em;
+	left: 1em;
+}
+
+header > a img {
+	width: 100%;
+	height: auto;
+}
+
+/* zoekbalk */
+header form {
+	width:100%;
+	background-color: white;
+	display: flex;
+	border-bottom:solid 1px rgb(211, 211, 211);
+	justify-content: end;
+}
+
+
+header form input {
+	font:1em;
+	padding: 0;
+	border: none;
+
+	text-align: end;
+}
+
+header form button {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	padding: 0;
+
+	background: none;
+	border: none
+}
+
+header form button img {
+	width: 1em;
+	height: auto;
+	
+}
+
+/* header deel 2 */
+
+/* menu button */
+
+header > button {
+	border: none;
+	background: none;
+	
+	align-items: center;
+	display: flex;
+	flex-direction:column-reverse;
+	gap:.3em;
+
+	font-size: 0.6em;
+	padding-left: 3em;
+}
+
+header > button img{
+	width: 1.5rem;
+	height: auto;
+
+	cursor: pointer;
+}
+
+/* menu inklapbaar */
+
+header nav:nth-of-type(1) {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 4em;
+
+	background-color:white;
+	translate:-100% 0%;
+	transition:translate .3s;
+}
+
+header nav.toonMenu:nth-of-type(1) {
+	translate:0% 0%;
+}
+
+header nav:nth-of-type(1) button {
+	width: 100%;
+	padding-left: 8em;
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+	
+	background: none;
+	border: none;
+	border-bottom:solid 1px rgb(211, 211, 211);
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+header nav:nth-of-type(1) ul {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	list-style: none;
+	margin: 0;
+	padding: 1em;
+	padding-top: 2em;
+}
+
+header nav:nth-of-type(1) li {
+	border-bottom:solid 1px rgb(211, 211, 211);
+	padding: 0.8em;
+}
+
+header nav:nth-of-type(1) a {
+	text-transform: uppercase;
+	text-decoration: none;
+	color: black;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* icootjes */
+header nav:nth-of-type(2) ul{
+	display: flex;
+	list-style: none;
+	gap: 1em;
+	margin: 0;
+	padding: 0;
+	padding-top: 1em;
+}
+
+header nav:nth-of-type(2) ul a{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: black;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.5em;
+
+	padding-right: 0.5em;
+}
+
+header nav:nth-of-type(2) img{
+	width: 3em;
+	height: 2.6em;
+}
+
+@media (width > 1100px) {
+	header{
+		position: sticky;
+		top: 0;
+		background-color: white;
+		z-index: 1;
+	
+		display: flex;
+		flex-wrap:wrap;
+		/* justify-content: space-between; */
+
+		padding-bottom: 1em;
+	}
+
+	header > a {
+		width: 10em;
+		position: absolute;
+		top: 3em;
+		left: 1em;
+	}
+
+	header > a img {
+		/* width: 100%; */
+		height: auto;
+	}
+
+	header > button {
+		display: none;
+	}
+
+	header nav:nth-of-type(1) button {
+		display: none;
+	}
+
+	header nav:nth-of-type(1) {
+		position:absolute;
+        translate:unset;
+		top: 3em;
+        padding:0;
+        background:none;
+	}
+
+	header nav:nth-of-type(1) ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: end;
+		padding: 0;
+	}
+
+	header nav:nth-of-type(1) li {
+		border-bottom: none;
+	}
+
+	header form {
+		background-color: lime;
+		display: flex;
+		width: 20em;
+	}
+	
+	header form input {
+		font:1em;
+		padding: 0;
+		border: none;
+	
+		text-align: end;
+	}
+	
+	header form button {
+		margin-top: 1em;
+		margin-bottom: 1em;
+		padding: 0;
+	
+		background: none;
+		border: none
+	}
+	
+	header form button img {
+		width: 1em;
+		height: auto;
+		
+	}
+
+	header nav:nth-of-type(2) {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+
+		display: flex;
+		
+		background-color: grey;
+		justify-content: end;
+
+	}
+	header nav:nth-of-type(2) ul{
+		display: flex;
+		list-style: none;
+		gap: 1em;
+		margin: 0;
+		padding: 0;
+
+		background-color: grey;
+	}
+	
+	header nav:nth-of-type(2) ul a{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: black;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 0.5em;
+	
+		padding-right: 0.5em;
+	}
+	
+	header nav:nth-of-type(2) img{
+		width: 3em;
+		height: 2.6em;
+	}
+
+}
+
+/* main  */
+
+
+ /* chat box */
+main dialog::backdrop {
+	background-color: white;
+}
+
+html:has(main dialog [open]) {
+	overflow: hidden;
+	scrollbar-gutter: stable;
+}
+
+dialog button.close {
+	position: absolute;
+	top:0;
+	right: 0;
+	width:3em;
+}
+
+main dialog {
+	position: fixed;
+	inset: 0;
+	margin: 0;
+	padding: 0;
+	width: auto;           
+	height: auto; 
+	z-index: 2;
+
+	border: none
+}
+
+main dialog article {
+	background-color: lightgreen;
+	margin: 0;
+	padding: 1.2em;
+	
+}
+
+main dialog article h2 {
+	margin: 0;
+	padding-left: 1em;
+}
+
+main dialog article h3 {
+	margin: 0;
+	padding-left: 1em;
+}
+
+main button:nth-last-of-type(1){
+	  background: none;
+	  border: none;
+	  appearance:none;
+
+	  cursor: pointer;
+
+	position:fixed;
+	bottom: 0;
+	right: 0;
+	z-index:2;
+  }
+
+main button:nth-last-of-type(1) img{
+	width: 8em;
+	height: auto;
+	margin: 0;
+}
+
+/* black friday */
+main section:nth-of-type(1) {
+	position: sticky;
+	top: 7.5em;
+}
+
+main section:nth-of-type(1) h2{
+	background-color: black;
+	color: white;
+	font-size: 1em;
+	
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	margin: 0;
+	
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	z-index: 1;
+}
+
+/* begin footer */
+
+
+/* section 1 - logo en socials */
+footer section:nth-of-type(1) {
+	display: flex;
+	justify-content: space-between;
+}
+
+footer section:nth-of-type(1) ul{
+	display: flex;
+	justify-content: end;
+	list-style-type: none;
+	gap: 1em;
+	margin: 1em;
+}
+
+footer section:nth-of-type(1) img{
+	width: 7em;
+	height: 1.8em;
+	margin-top: 1.6em;
+	margin-left: 2em;
+}
+
+footer section:nth-of-type(1) ul li img{
+	width: 3em;
+	height: 2.5em;
+	margin: 0;
+	
+}
+
+/* navigatie */
+footer section:nth-of-type(2) ul {
+	list-style: none;
+	padding: 0;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+footer section:nth-of-type(2) ul li {
+	border-bottom: solid rgb(213, 213, 213);
+}
+
+footer section:nth-of-type(2) ul li a {
+	text-transform: uppercase;
+	display: flex;
+	justify-content: space-between;
+	font-size: 0.8em;
+	color: black;
+	text-decoration: none;
+}
+footer section:nth-of-type(2) ul li a h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: lighter;
+}
+
+footer section:nth-of-type(2) ul li a p {
+	text-align: end;
+	margin-right: 2em;
+}
+
+
+/* section 2 - betaalmiddelen en mark */
+footer section:nth-of-type(3) {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	display:flex;
+	flex-direction:column-reverse;
+	margin-bottom: 1em;
+}
+
+footer section:nth-of-type(3) p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.8em;
+}
+
+footer section:nth-of-type(3) ul {
+	display: flex;
+	list-style: none;
+	gap: 1.8em;
+	padding: 0;
+}
+
+footer section:nth-of-type(3) ul img {
+	width: 3em;
+	height: 2em;
+}

@@ -1,0 +1,253 @@
+/* ontdek de collecties */
+main section:nth-of-type(2) {
+	display: grid;
+	grid-template-columns: 8fr 2fr  ;
+}
+
+main section:nth-of-type(2) h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	color: white;
+
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 2;
+	grid-row-end: 3;
+
+	z-index: 1;
+	align-self: end;
+	justify-self: center;
+}
+
+main section:nth-of-type(2) img:nth-of-type(1) {
+	width: 100%;
+	height: 100%;
+
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 3;
+
+}
+main section:nth-of-type(2) img:nth-of-type(2) {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+main section:nth-of-type(2) img:nth-of-type(3) {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+@media (width > 800px) {
+	main section:nth-of-type(2){
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 1em;
+	}
+
+	main section:nth-of-type(2) img:nth-of-type(1) {
+		width: 100%;
+		height: 100;
+		object-fit: cover;
+
+		grid-column-start: 2;
+		grid-column-end: 3;
+		grid-row-start: 1;
+		grid-row-end: 2;
+	}
+	
+	main section:nth-of-type(2) h2 {
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: normal;
+		color: white;
+	
+		grid-column-start: 2;
+		grid-column-end: 3;
+		grid-row-start: 1;
+		grid-row-end: 2;
+	
+		z-index: 1;
+		align-self: end;
+		justify-self: center;
+	}
+}
+/* categorieen */
+
+main section:nth-of-type(3) ul{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1em;
+	padding: 1rem;
+	align-items: center;
+
+	list-style: none;
+}
+
+main section:nth-of-type(3) ul li a{
+	position: relative;
+	color: var(--sissy-boy-white);
+	display: block;
+}
+
+main section:nth-of-type(3) ul li a p {
+	position: absolute;
+	margin: 0;
+	align-self: end;
+	justify-self: end;
+
+	text-transform: uppercase;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+main section:nth-of-type(3) a{
+	text-decoration: none;
+
+	grid-column-start: 1;
+	grid-column-end: 2;
+
+	grid-row-start: 1;
+	grid-row-end: 2;
+
+	z-index: -1;
+	align-self: end;
+	justify-self: start;
+}
+
+main section:nth-of-type(3) img {
+	width: 100%;
+	height: 100%;
+}
+
+@media (width > 800px) {
+	main section:nth-of-type(3) ul {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+}
+
+/* sieraden section */
+main section:nth-of-type(4) {
+	display: flex;
+	gap: 2em;
+
+	align-items: center;
+	justify-content: center;
+
+	margin-left: 5em;
+	margin-right: 5em;
+
+
+	padding-bottom: 4em;
+	border-bottom: solid rgb(213, 213, 213);
+	/* width: 100%; */
+}
+main section:nth-of-type(4) img{
+	width: 23em;
+	height: 23em;
+}
+main section:nth-of-type(4) article {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+	align-items: center;
+
+	display:flex;
+	flex-direction:column-reverse;
+	
+}
+main section:nth-of-type(4) article img:nth-last-of-type(1) {
+	width: 10em;
+	height: 8em;
+}
+main section:nth-of-type(4) article img:nth-last-of-type(2) {
+	width: 7em;
+	height: 3em;
+}
+
+main section:nth-of-type(4) article p {
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	font-size: 0.1em;
+}
+
+main section:nth-of-type(4) article a {
+	color: black;
+	text-transform: uppercase;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.5em;
+}
+
+/* newsletter */
+main section:nth-of-type(5) {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 1em;
+	padding-bottom: 2em;
+	border-bottom: solid rgb(213, 213, 213);
+}
+
+main section:nth-of-type(5) h2 {
+	text-transform: uppercase;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	
+}
+main section:nth-of-type(5) p:nth-last-of-type(2){
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	
+
+	margin-left: 2em;
+	margin-right: 2em;
+}
+main section:nth-of-type(5) p:nth-last-of-type(1){
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.8em;
+	color: rgb(184, 184, 184);
+
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+/* checkboxen */
+main section:nth-of-type(5) ul {
+	display: flex;
+	list-style: none;
+	gap: 1em;
+}
+
+/* online shoppen bij sissy-boy */
+main section:nth-of-type(6) {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 1em;
+	padding-bottom: 2em;
+}
+
+main section:nth-of-type(6) h2 {
+	text-transform: uppercase;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+}
+
+main section:nth-of-type(6) p:nth-last-of-type(1){
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: italic;
+
+	text-align: center;
+}
+
+main section:nth-of-type(6) p:nth-last-of-type(2){
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	
+	margin-left: 1em;
+	margin-right: 1em;
+	text-align: center;
+}

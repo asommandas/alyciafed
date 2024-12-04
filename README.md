@@ -16,19 +16,15 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Auteur:
-  Sanne 't Hooft (vervangen door jouw naam)
+  Alycia
 
   #### Je startniveau:
-  hier je startniveau (kies uit zwart, rood óf blauw)
+  rood
 
   #### Je focus:
-  hier je focus (kies uit responsive óf surface plane)
+  Responsive
  
 </details>
-
-
-
-
 
 ## Je website
 
@@ -36,19 +32,17 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Je opdracht:
-  link naar de website die je gaat namaken óf de naam/omschrijving van je eigen ontwerp
+  link: https://www.sissy-boy.com/?_gl=1*1auuxup*_up*MQ..&gclid=EAIaIQobChMI0MimxKLpiQMV3hyDAx2t8C9JEAAYASAAEgL7tvD_BwE 
 
   #### Screenshot(s) van de eerste pagina (small screen): 
-  hier de naam van de pagina  
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="omschrijving van de pagina">
+  Sissy boy - home page 
+ <img src="image/homepage.jpg" alt="de homepagina van sissy-boy, vanuit hier kan je navigeren door de gehele website">
 
   #### Screenshot(s) van de tweede pagina (small screen):
-  hier de naam van de pagina  
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="omschrijving van de pagina">
+  Sissy boy - kerst decoratie (tafelen) 
+  <img src="image/kerstdecoratie.jpg" alt="kerst decoratie. pagina met producten die vallen onder de categorie 'kerst decoratie' ">
  
 </details>
-
-
 
 ## Toegankelijkheidstest 1/2 (week 1)
 
@@ -57,6 +51,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen:
+
+  Ze gebruiken engels en Nederlandse taal door elkaar, wat erg storend is. Ook is er weinig verschil tussen 'normale' tekst en buttons/links. Hierdoor is de website niet overzichtelijk en moeilijk te begrijpen voor een gebruiker. 
+
+  Qua screen reader gaan ze een logische volgorde langs, zodat het makkelijk te volgen is. Helaas kan je niet doorspoelen naar verdere onderdelen op de pagaina's en en miste transscriptie. 
+
 
 </details>
 
