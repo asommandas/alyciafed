@@ -1,12 +1,13 @@
 /* ontdek de collecties */
 main section:nth-of-type(2) {
 	display: grid;
-	grid-template-columns: 8fr 2fr  ;
+	grid-template-columns: 8fr 2fr  ;	
 }
 
 main section:nth-of-type(2) h2 {
 	font-family: Arial, Helvetica, sans-serif;
-	font-weight: normal;
+	font-weight: lighter;
+	font-size: 1em;
 	color: white;
 
 	grid-column-start: 1;
@@ -17,6 +18,9 @@ main section:nth-of-type(2) h2 {
 	z-index: 1;
 	align-self: end;
 	justify-self: center;
+
+	text-decoration: underline;
+	cursor: pointer;
 }
 
 main section:nth-of-type(2) img:nth-of-type(1) {
@@ -27,7 +31,6 @@ main section:nth-of-type(2) img:nth-of-type(1) {
 	grid-column-end: 2;
 	grid-row-start: 1;
 	grid-row-end: 3;
-
 }
 main section:nth-of-type(2) img:nth-of-type(2) {
 	width: 100%;
@@ -88,31 +91,18 @@ main section:nth-of-type(3) ul{
 main section:nth-of-type(3) ul li a{
 	position: relative;
 	color: var(--sissy-boy-white);
-	display: block;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	
 }
 
 main section:nth-of-type(3) ul li a p {
 	position: absolute;
-	margin: 0;
-	align-self: end;
-	justify-self: end;
-
+	bottom: 0;
 	text-transform: uppercase;
 	font-family: Arial, Helvetica, sans-serif;
-}
-
-main section:nth-of-type(3) a{
-	text-decoration: none;
-
-	grid-column-start: 1;
-	grid-column-end: 2;
-
-	grid-row-start: 1;
-	grid-row-end: 2;
-
-	z-index: -1;
-	align-self: end;
-	justify-self: start;
 }
 
 main section:nth-of-type(3) img {
@@ -134,17 +124,14 @@ main section:nth-of-type(4) {
 	align-items: center;
 	justify-content: center;
 
-	margin-left: 5em;
-	margin-right: 5em;
-
 
 	padding-bottom: 4em;
 	border-bottom: solid rgb(213, 213, 213);
-	/* width: 100%; */
+	width: 100%;
 }
 main section:nth-of-type(4) img{
-	width: 23em;
-	height: 23em;
+	width: 10em;
+	height: 13em;
 }
 main section:nth-of-type(4) article {
 	display: flex;
@@ -154,11 +141,16 @@ main section:nth-of-type(4) article {
 
 	display:flex;
 	flex-direction:column-reverse;
+
+	width: 5em;
+
+	
 	
 }
 main section:nth-of-type(4) article img:nth-last-of-type(1) {
-	width: 10em;
-	height: 8em;
+	width: 5em;
+	height: 7em;
+	padding-top: 0.8em;
 }
 main section:nth-of-type(4) article img:nth-last-of-type(2) {
 	width: 7em;
@@ -191,15 +183,15 @@ main section:nth-of-type(5) {
 
 main section:nth-of-type(5) h2 {
 	text-transform: uppercase;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: "sissyboy-font";
 	font-weight: normal;
 	
 }
 main section:nth-of-type(5) p:nth-last-of-type(2){
 	text-align: center;
 	font-family: Arial, Helvetica, sans-serif;
+	font-weight: lighter;
 	
-
 	margin-left: 2em;
 	margin-right: 2em;
 }
@@ -220,19 +212,32 @@ main section:nth-of-type(5) ul {
 	gap: 1em;
 }
 
+main section:nth-of-type(5) ul li label input[type] {
+	background-color: black;
+}
+
+main section:nth-of-type(5) input {
+	padding: 0.8em;
+	padding-left: 5em;
+	padding-right: 5em;
+
+	text-align: start;
+}
+
 /* online shoppen bij sissy-boy */
 main section:nth-of-type(6) {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	/* align-items: center; */
 	margin-top: 1em;
 	padding-bottom: 2em;
 }
 
 main section:nth-of-type(6) h2 {
 	text-transform: uppercase;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: normal;
+	text-align: center;
+	font-family: "sissyboy-font";
+	font-weight: 400;
 }
 
 main section:nth-of-type(6) p:nth-last-of-type(1){

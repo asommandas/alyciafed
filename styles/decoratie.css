@@ -1,70 +1,107 @@
-/* waar ben ik */
-main section:nth-of-type(2) ul{
-    display: flex;
+
+
+h1 {
+   font-family: "sissyboy-font"; 
+   text-align: center;
+   text-transform: uppercase;
+   font-weight: 400;
+   margin-bottom: 1em;
+}
+
+main section:nth-of-type(2) ul {
+    display: none;
+}
+
+main section:nth-of-type(3) ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .3em;
     list-style: none;
-    gap: 1em;
+
+    padding: 0;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
-main section:nth-of-type(2) ul a {
-   color: black;
-   text-decoration: none;
+main section:nth-of-type(3) img:nth-of-type(1) {
+    width: 100%;
+    height: auto;
+
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 
-main section:nth-of-type(2) ul a h3 {
+main section:nth-of-type(3) a {
+    text-decoration: none;
+    position: relative;
+    
+	color: var(--sissy-boy-white);
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
-    font-size: 1em;
- }
+    font-weight: normal;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
 
- main section:nth-of-type(3) {
-    display: flex;
- }
+main section:nth-of-type(3) a p {
+    position: absolute;
+	top: 50%;
 
+    margin: 0;
 
- main section:nth-of-type(3) section:nth-last-of-type(3) {
+	text-transform: uppercase;
+    font-size: 2em;
+    text-align: center;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+main article h2 {
+    font-family: "sissyboy-font";
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 2em;
+}
+
+main article p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main article {
     display: flex;
     flex-direction: column;
- }
+   
+    padding-left: 2em;
+    padding-right: 2em;
 
- main section:nth-of-type(3) section:nth-last-of-type(3) ul{
-    list-style: none;
- }
-
-
- main section:nth-of-type(3) section:nth-last-of-type(2) {
-    display: flex;
-    
- }
-
- /* main section:nth-of-type(3) section:nth-last-of-type(1) {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
- }
-
- main section:nth-of-type(3) section:nth-last-of-type(1) ul {
-    list-style: none;
- }
-
- main section:nth-of-type(3) section:nth-last-of-type(1) img:nth-of-type(1) {
-	width: 100%;
-	height: 100%;
-
-	grid-column-start: 1;
-	grid-column-end: 2;
-
-	grid-row-start: 1;
-	grid-row-end: 2;
-
+    margin-top: 1em;
 }
 
-main section:nth-of-type(3) section:nth-last-of-type(1) img:nth-of-type(2) {
-	width: 100%;
-	height: 100%;
+@media (width > 740px) {
+    main section:nth-of-type(3) ul {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 
-	grid-column-start: 2;
-	grid-column-end: 3;
+    main article {
+        padding-left: 10em;
+        padding-right: 10em;
+    }
+}
 
-	grid-row-start: 1;
-	grid-row-end: 2;
+@media (width > 1000px) {
+    main section:nth-of-type(2) ul {
+        display: flex;
+        list-style: none;
+        gap: 1em;
+    }
 
-} */
+    main section:nth-of-type(2) ul li a {
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif ;
+        font-weight: lighter;
+        color: black;
+    }
+}
