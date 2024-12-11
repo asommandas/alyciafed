@@ -13,7 +13,7 @@
 	/* startje */
 	--sissy-boy-text-black:#000000;
 	--sissy-boy-tekst-white:#FFFFFF;
-	--sissy-boy-tekst-white:grey;
+	--sissy-boy-tekst-grey:grey;
 
 	--color-links-lopende-tekst:rgb(135, 165, 135);
 	--color-links-lopende-tekst:rgb(91, 109, 91);
@@ -21,10 +21,12 @@
 
 	--color-background-white:#FFFFFF;
 	--color-background-black:#000000;
+	--color-background-licht-groen:rgb(169, 198, 169);
 	--color-background-form:#eee;
 	--color-background-checked-box:#eee;
 	
 	--color-buttons-:rgb(135, 165, 135);
+	--color-elementen-in-buttons-:rgb(58, 74, 58);
 	--color-icoontjes-black:#000000;
 	--color-icoontjes-white:#000000;
 
@@ -38,10 +40,6 @@
 	--font-size-h3: ;
 	--font-size-p: ;
 	--font-size-op-img: ;
-
-	--text-margin-klein-formaat: ;
-	--text-margin-middel-formaat: ;
-	--text-margin-groot-formaat: ;
 
 
 }
@@ -96,7 +94,7 @@ header > a img {
 /* zoekbalk */
 header form {
 	width:100%;
-	background-color: var(--color-background-form);
+	background-color: var(--color-background-white);
 	display: flex;
 	align-items: center;
 	border: none;
@@ -160,7 +158,7 @@ header nav:nth-of-type(1) {
 	bottom: 0;
 	right: 4em;
 
-	background-color:white;
+	background-color:var(--color-background-white);
 	translate:-100% 0%;
 	transition:translate .3s;
 }
@@ -192,6 +190,8 @@ header nav:nth-of-type(1) ul {
 	margin: 0;
 	padding: 1em;
 	padding-top: 2em;
+
+	z-index: 3;
 }
 
 header nav:nth-of-type(1) li {
@@ -367,8 +367,12 @@ header nav:nth-of-type(2) img{
 
  /* chat box */
 
+main {
+	background-color: var(--color-background-white);
+}
+
 main dialog::backdrop {
-	background-color: white;
+	background-color: var(--color-background-white);
 }
 
 html:has(main dialog [open]) {
@@ -396,7 +400,7 @@ main dialog {
 }
 
 main dialog article:nth-of-type(1) {
-	background-color: rgb(169, 198, 169);
+	background-color: var(--color-background-licht-groen) ;
 	margin: 0;
 	padding: 1.2em;
 	position: relative;
@@ -404,7 +408,11 @@ main dialog article:nth-of-type(1) {
 
 main dialog article:nth-of-type(1) button {
 	position: absolute;
+	top: 2.5em;
 	right: 1em;
+	
+	background: none;
+	border: none;
 }
 
 main dialog article:nth-of-type(1) h2 {
@@ -441,7 +449,7 @@ main dialog article:nth-of-type(3) {
 
 	font-family: Arial, Helvetica, sans-serif;
 	border-radius: 1em;
-	background-color: rgb(236, 234, 234);
+	background-color: var(--color-background-white);
 
 	font-size: 1.3em;
 }
@@ -466,19 +474,18 @@ main dialog section p {
 	position: absolute;
 	bottom: 1em;
 	left: 1em;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 main dialog section button {
 	position: absolute;
 	bottom: 1em;
 	right: 1.5em;
-	background-color: rgb(111, 150, 111);
+	background-color: var(--color-buttons-);
 	padding: 1.5em;
 	border:none;
 	border-radius: 4em;
 }
-
-
 
 main dialog section input {
 	width: 90%;
@@ -490,12 +497,8 @@ main dialog section input {
 	border-radius: 3em;
 }
 
-main dialog section button {
-	position: absolute;
-}
-
 main > button {
-	  background: lime;
+	  background: var(--color-buttons-);
 	  border-radius: 3em;
 	  width: 6em;
 	  aspect-ratio: 1;
@@ -504,14 +507,15 @@ main > button {
 
 	  cursor: pointer;
 
-	position:fixed;
-	bottom: 0;
-	right: 0;
-	z-index:2;
+	  position:fixed;
+	  bottom: 2em;
+	  right: 2em;
+	  z-index:2;
   }
   main > button svg {
 	width: 3em;
 	height: 3em;
+	fill: var(--color-elementen-in-buttons-);
   }
 
 main button:nth-last-of-type(1) img{
@@ -520,17 +524,26 @@ main button:nth-last-of-type(1) img{
 	margin: 0;
 }
 
-/* wonder of worlds */
+@media (width > 600px) {
+	main dialog {
+		top:2em;
+		left: 10em;
+		right: 1em;
+		bottom: 1em;
+	}
+}
+
+/*///////////////////////////////////////////// wonder of worlds /////////////////////////////*/
 main section:nth-of-type(1) {
 	position: sticky;
 	top: 7.5em;
-	z-index: 2;
+	z-index: 1;
 }
 
 main section:nth-of-type(1) h2{
 	position: relative;
-	background-color: rgb(243, 133, 133);
-	color: white;
+	background-color: var(--color-sissy-boy-season-);
+	color: var(--sissy-boy-tekst-white);
 	font-size: 1em;
 	
 	padding-top: 0.5em;
@@ -670,7 +683,7 @@ footer > p {
 
 	footer details a {
 		padding: 0;
-		color: grey;
+		color: var(--sissy-boy-tekst-grey);
 	}
 	
 	footer section:nth-of-type(2) {

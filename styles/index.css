@@ -1,4 +1,9 @@
-/* ontdek de collecties */
+h1 {
+	display: none;
+}
+
+/* /////////////////////////////////////////////* ontdek de collecties ///////////////////////*/ 
+
 main section:nth-of-type(2) {
 	display: grid;
 	grid-template-columns: 8fr 2fr  ;	
@@ -8,7 +13,7 @@ main section:nth-of-type(2) h2 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: lighter;
 	font-size: 1em;
-	color: white;
+	color: var(--sissy-boy-tekst-white);
 
 	grid-column-start: 1;
 	grid-column-end: 2;
@@ -64,7 +69,7 @@ main section:nth-of-type(2) img:nth-of-type(3) {
 	main section:nth-of-type(2) h2 {
 		font-family: Arial, Helvetica, sans-serif;
 		font-weight: normal;
-		color: white;
+		color: var(--sissy-boy-tekst-white);
 	
 		grid-column-start: 2;
 		grid-column-end: 3;
@@ -76,7 +81,8 @@ main section:nth-of-type(2) img:nth-of-type(3) {
 		justify-self: center;
 	}
 }
-/* categorieen */
+
+/* ///////////////////////////////////////categorieen//////////////////////////////////////////////// */
 
 main section:nth-of-type(3) ul{
 	position: relative;
@@ -87,7 +93,6 @@ main section:nth-of-type(3) ul{
 	align-items: center;
 
 	list-style: none;
-
 	z-index: 0;
 }
 
@@ -97,7 +102,6 @@ main section:nth-of-type(3) ul li a{
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
-	
 }
 
 main section:nth-of-type(3) ul li a p {
@@ -105,7 +109,6 @@ main section:nth-of-type(3) ul li a p {
 	bottom: 0;
 	text-transform: uppercase;
 	font-family: Arial, Helvetica, sans-serif;
-	color: var(--sissy-boy-tekst-white);
 	color: var(--sissy-boy-tekst-white);
 
 	z-index: 1;
@@ -115,7 +118,11 @@ main section:nth-of-type(3) img {
 	width: 100%;
 	height: 100%;
 
-	filter: brightness(0.5);
+	filter: brightness(0.6);
+}
+
+main section:nth-of-type(3) li:hover img {
+    filter: none;
 }
 
 @media (width > 800px) {
@@ -124,22 +131,21 @@ main section:nth-of-type(3) img {
 	}
 }
 
-/* sieraden section */
+/*///////////////////////////////////////////// sieraden section////////////////////////////////////////////// */
 main section:nth-of-type(4) {
 	display: flex;
 	gap: 2em;
-
-	align-items: center;
 	justify-content: center;
 
-
 	padding-bottom: 4em;
-	border-bottom: solid rgb(213, 213, 213);
 	width: 100%;
+
+	border-bottom: var(--color-border-bottom);
 }
+
 main section:nth-of-type(4) img{
-	width: 10em;
-	height: 13em;
+	width: 15em;
+	height: 18em;
 }
 main section:nth-of-type(4) article {
 	display: flex;
@@ -151,18 +157,18 @@ main section:nth-of-type(4) article {
 	flex-direction:column-reverse;
 
 	width: 5em;
-
-	
-	
 }
-main section:nth-of-type(4) article img:nth-last-of-type(1) {
-	width: 5em;
-	height: 7em;
+main section:nth-of-type(4) article img {
+	width: 6em;
+	height: 3.5em;
 	padding-top: 0.8em;
+	order: 1;
 }
-main section:nth-of-type(4) article img:nth-last-of-type(2) {
+
+main section:nth-of-type(4) video {
 	width: 7em;
-	height: 3em;
+	height: auto;
+	order: 2;
 }
 
 main section:nth-of-type(4) article p {
@@ -179,14 +185,47 @@ main section:nth-of-type(4) article a {
 	font-size: 0.5em;
 }
 
-/* newsletter */
+@media (width > 800px) {
+	main section:nth-of-type(4) img{
+		width: 20em;
+		height: 25em;
+	}
+
+	main section:nth-of-type(4) video {
+		width: 12em;
+		height: auto;
+	}
+
+	main section:nth-of-type(4) {
+		gap: 5em;
+	}
+}
+
+@media (width > 1200px) {
+	main section:nth-of-type(4) img{
+		width: 30em;
+		height: 35em;
+	}
+
+	main section:nth-of-type(4) video {
+		width: 16em;
+		height: auto;
+	}
+
+	main section:nth-of-type(4) {
+		gap: 7em;
+	}
+}
+
+
+/* //////////////////////////////////////////////////newsletter/////////////////////////////////////////// */
 main section:nth-of-type(5) {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	margin-top: 1em;
 	padding-bottom: 2em;
-	border-bottom: solid rgb(213, 213, 213);
+	border-bottom: var(--color-border-bottom);
 }
 
 main section:nth-of-type(5) h2 {
@@ -207,7 +246,7 @@ main section:nth-of-type(5) p:nth-last-of-type(1){
 	text-align: center;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 0.8em;
-	color: rgb(184, 184, 184);
+	color: var(--sissy-boy-tekst-grey);
 
 	margin-left: 1em;
 	margin-right: 1em;
@@ -218,11 +257,12 @@ main section:nth-of-type(5) ul {
 	display: flex;
 	list-style: none;
 	gap: 1em;
+
+	padding: 0;
 }
 
-main section:nth-of-type(5) ul li label input[type] {
-	background-color: black;
-}
+
+/* form email */
 
 main section:nth-of-type(5) input {
 	padding: 0.8em;
@@ -232,11 +272,10 @@ main section:nth-of-type(5) input {
 	text-align: start;
 }
 
-/* online shoppen bij sissy-boy */
+/* ////////////////////////////////////////////////////online shoppen bij sissy-boy/////////////////////////*/
 main section:nth-of-type(6) {
 	display: flex;
 	flex-direction: column;
-	/* align-items: center; */
 	margin-top: 1em;
 	padding-bottom: 2em;
 }
@@ -252,14 +291,12 @@ main section:nth-of-type(6) p:nth-last-of-type(1){
 	text-align: center;
 	font-family: Arial, Helvetica, sans-serif;
 	font-style: italic;
-
 	text-align: center;
 }
 
 main section:nth-of-type(6) p:nth-last-of-type(2){
 	text-align: center;
 	font-family: Arial, Helvetica, sans-serif;
-	
 	margin-left: 1em;
 	margin-right: 1em;
 	text-align: center;

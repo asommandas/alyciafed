@@ -39,7 +39,7 @@ function checkOfDetailsOpenOfDichtMoeten() {
     console.log("Functie wordt aangeroepen");
     
     alleDetails.forEach(eenDetails => {
-      if(window.innerWidth > 800) {
+      if(window.innerWidth > 1200) {
         eenDetails.open = true;
       } else {
         eenDetails.open = false;
