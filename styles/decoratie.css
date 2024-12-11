@@ -13,6 +13,8 @@ main section:nth-of-type(2) ul {
 }
 
 main section:nth-of-type(3) ul {
+    position: relative;
+    /* z-index: -1; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: .3em;
@@ -22,6 +24,15 @@ main section:nth-of-type(3) ul {
     margin-left: 1em;
     margin-right: 1em;
 }
+
+main section:nth-of-type(3) img {
+    filter: brightness(0.5);
+}
+
+main section:nth-of-type(3) li:hover img {
+    filter: none;
+}
+
 
 main section:nth-of-type(3) img:nth-of-type(1) {
     width: 100%;
@@ -51,12 +62,13 @@ main section:nth-of-type(3) a p {
 	top: 50%;
 
     margin: 0;
-
 	text-transform: uppercase;
-    font-size: 2em;
+    font-size: 1em;
     text-align: center;
     padding-left: 1em;
     padding-right: 1em;
+
+    z-index: 1;
 }
 
 main article h2 {
@@ -70,13 +82,16 @@ main article p {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+main article a {
+    color: rgb(135, 165, 135);
+}
+
 main article {
     display: flex;
     flex-direction: column;
    
-    padding-left: 2em;
-    padding-right: 2em;
-
+    padding-left: 1em;
+    padding-right: 1em;
     margin-top: 1em;
 }
 

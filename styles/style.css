@@ -11,10 +11,39 @@
 /*********************/
 :root {
 	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
-	--sissy-boy-white: ghostwhite;
-	--whitespace:clamp(1.25em, 5vw, 2em);
+	--sissy-boy-text-black:#000000;
+	--sissy-boy-tekst-white:#FFFFFF;
+	--sissy-boy-tekst-white:grey;
+
+	--color-links-lopende-tekst:rgb(135, 165, 135);
+	--color-links-lopende-tekst:rgb(91, 109, 91);
+	--color-hover-links:rgb(135, 165, 135);
+
+	--color-background-white:#FFFFFF;
+	--color-background-black:#000000;
+	--color-background-form:#eee;
+	--color-background-checked-box:#eee;
+	
+	--color-buttons-:rgb(135, 165, 135);
+	--color-icoontjes-black:#000000;
+	--color-icoontjes-white:#000000;
+
+	--color-header-chatbox:rgb(135, 165, 135);
+	--color-sissy-boy-season-:rgb(243, 133, 133);
+	--color-border-bottom:solid 1px rgb(211, 211, 211);
+
+	--font-size-normaal: ;
+	--font-size-h1: ;
+	--font-size-h2: ;
+	--font-size-h3: ;
+	--font-size-p: ;
+	--font-size-op-img: ;
+
+	--text-margin-klein-formaat: ;
+	--text-margin-middel-formaat: ;
+	--text-margin-groot-formaat: ;
+
+
 }
 
 @font-face {
@@ -36,18 +65,19 @@
 body {
 	margin: 0;
 }
+/* //////////////////////////////////////////header///////////////////////////////////// */
 
 header{
 	position: sticky;
 	top: 0;
-	background-color: white;
-	z-index: 1;
+	z-index: 2;
 
 	display: flex;
 	flex-wrap:wrap;
 	justify-content: space-between;
 
 	padding-bottom: 1em;
+	background-color: var(--color-background-white);
 }
 
 /* logo */
@@ -66,7 +96,7 @@ header > a img {
 /* zoekbalk */
 header form {
 	width:100%;
-	background-color: white;
+	background-color: var(--color-background-form);
 	display: flex;
 	align-items: center;
 	border: none;
@@ -75,14 +105,13 @@ header form {
 	justify-content: end;
 }
 
-
 header form input {
 	font:1em;
 	padding: 0;
 	border: none;
 	text-align: end;
 	padding: 0.1em;
-	border-bottom: solid 1px rgb(159, 156, 156);
+	border-bottom: var(--color-border-bottom);
 }
 
 header form button {
@@ -99,7 +128,6 @@ header form button {
 header form button img {
 	width: 1em;
 	height: auto;
-	
 }
 
 /* header deel 2 */
@@ -107,22 +135,19 @@ header form button img {
 /* menu button */
 
 header > button {
-	border: none;
-	background: none;
-	
-	align-items: center;
 	display: flex;
 	flex-direction:column-reverse;
 	gap:.3em;
+	padding-left: 3em;
 
 	font-size: 0.6em;
-	padding-left: 3em;
+	border: none;
+	background: none;
 }
 
 header > button img{
 	width: 1.5rem;
 	height: auto;
-
 	cursor: pointer;
 }
 
@@ -146,14 +171,15 @@ header nav.toonMenu:nth-of-type(1) {
 
 header nav:nth-of-type(1) button {
 	width: 100%;
-	display: flex;
-	justify-content: end;
 	padding-top: 1.5em;
 	padding-bottom: 1.5em;
+
+	display: flex;
+	justify-content: end;
 	
 	background: none;
 	border: none;
-	border-bottom:solid 1px rgb(211, 211, 211);
+	border-bottom:var(--color-border-bottom);
 	text-transform: uppercase;
 	cursor: pointer;
 }
@@ -219,9 +245,7 @@ header nav:nth-of-type(2) img{
 	header > a {
 		width: 10em;
 		position: absolute;
-		/* top: 3em; */
 		left: 1em;
-		
 	}
 
 	header > button {
@@ -244,7 +268,6 @@ header nav:nth-of-type(2) img{
 	}
 
 	header nav:nth-of-type(1) ul {
-		/* display: flex; */
 		flex-direction: row;
 		padding: 0;
 	}
@@ -297,20 +320,10 @@ header nav:nth-of-type(2) img{
 	}
 
 	header nav:nth-of-type(2) {
-		/* position: absolute; */
-		/* top: 0; */
-		/* left: 0; */
-		/* right: 0; */
-
-		/* display: flex; */
-		
-		/* background-color: grey; */
-		/* justify-content: end; */
-
 		width:50%;
 		margin-left:auto;
-
 	}
+
 	header nav:nth-of-type(2) ul{
 		display: flex;
 		list-style: none;
@@ -321,8 +334,6 @@ header nav:nth-of-type(2) img{
 		padding-right: 1em;
 
 		justify-content: end;
-
-		/* background-color: grey; */
 	}
 	
 	header nav:nth-of-type(2) ul a{
@@ -345,10 +356,17 @@ header nav:nth-of-type(2) img{
 
 }
 
-/* main  */
+@media (width > 1500px) {
+	header nav:nth-of-type(2) {
+		width: 100%;
+	}
+}
 
+
+/*///////////////////////////////// main//////////////////////////////////////////   */
 
  /* chat box */
+
 main dialog::backdrop {
 	background-color: white;
 }
@@ -377,25 +395,110 @@ main dialog {
 	border: none
 }
 
-main dialog article {
-	background-color: lightgreen;
+main dialog article:nth-of-type(1) {
+	background-color: rgb(169, 198, 169);
 	margin: 0;
 	padding: 1.2em;
-	
+	position: relative;
 }
 
-main dialog article h2 {
+main dialog article:nth-of-type(1) button {
+	position: absolute;
+	right: 1em;
+}
+
+main dialog article:nth-of-type(1) h2 {
 	margin: 0;
+	padding-left: 1em;
+	font-family: "sissyboy-font";
+}
+
+main dialog article:nth-of-type(1) h3 {
+	margin: 0;
+	padding-left: 1em;
+	font-family: "sissyboy-font";
+	font-weight: 400;
+}
+
+main dialog article:nth-of-type(2) p:nth-of-type(1) {
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	color: grey;
+}
+
+main dialog article:nth-of-type(2) p:nth-of-type(2) {
+	margin-left: 4em;
+	font-family: Arial, Helvetica, sans-serif;
+	color: grey;
+}
+
+main dialog article:nth-of-type(3) {
+	margin-left: 3em;
+	margin-right: 7em;
+	margin-bottom: 1em;
+	padding: 0.1em;
+	padding-left: 1em;
+
+	font-family: Arial, Helvetica, sans-serif;
+	border-radius: 1em;
+	background-color: rgb(236, 234, 234);
+
+	font-size: 1.3em;
+}
+
+main dialog section {
+	position: relative;
+
+	border: var(--color-border-bottom);
+	border-radius: 2em;
+	padding-bottom: 6em;
+
+	margin-left: 4em;
+	margin-right: 2em;
+}
+
+main dialog section h3 {
+	font-family: Arial, Helvetica, sans-serif;
 	padding-left: 1em;
 }
 
-main dialog article h3 {
-	margin: 0;
-	padding-left: 1em;
+main dialog section p {
+	position: absolute;
+	bottom: 1em;
+	left: 1em;
 }
 
-main button:nth-last-of-type(1){
-	  background: none;
+main dialog section button {
+	position: absolute;
+	bottom: 1em;
+	right: 1.5em;
+	background-color: rgb(111, 150, 111);
+	padding: 1.5em;
+	border:none;
+	border-radius: 4em;
+}
+
+
+
+main dialog section input {
+	width: 90%;
+	box-sizing: border-box;
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+	margin-left: 1em;
+	margin-right: 1em;
+	border-radius: 3em;
+}
+
+main dialog section button {
+	position: absolute;
+}
+
+main > button {
+	  background: lime;
+	  border-radius: 3em;
+	  width: 6em;
+	  aspect-ratio: 1;
 	  border: none;
 	  appearance:none;
 
@@ -406,20 +509,26 @@ main button:nth-last-of-type(1){
 	right: 0;
 	z-index:2;
   }
+  main > button svg {
+	width: 3em;
+	height: 3em;
+  }
 
 main button:nth-last-of-type(1) img{
-	width: 8em;
+	width: 12em;
 	height: auto;
 	margin: 0;
 }
 
-/* black friday */
+/* wonder of worlds */
 main section:nth-of-type(1) {
 	position: sticky;
 	top: 7.5em;
+	z-index: 2;
 }
 
 main section:nth-of-type(1) h2{
+	position: relative;
 	background-color: rgb(243, 133, 133);
 	color: white;
 	font-size: 1em;
@@ -432,11 +541,9 @@ main section:nth-of-type(1) h2{
 	font-family:Arial, Helvetica, sans-serif;
 	font-weight: normal;
 	text-transform: uppercase;
-	z-index: 1;
 }
 
-/* begin footer */
-
+/* ///////////////////////////////////begin footer///////////////////////////////// */
 
 /* section 1 - logo en socials */
 @media (width < 460px) {
@@ -446,7 +553,9 @@ main section:nth-of-type(1) h2{
 		align-items: center;
 	}
 }
-
+footer {
+	margin-top: 3em;
+}
 footer section:nth-of-type(1) {
 	display: flex;
 	justify-content: space-between;
@@ -456,80 +565,147 @@ footer section:nth-of-type(1) ul{
 	display: flex;
 	justify-content: end;
 	list-style-type: none;
-	gap: 1em;
+	gap: .5em;
 	margin: 1em;
 }
 
 footer section:nth-of-type(1) img{
 	width: 7em;
-	height: 1.8em;
+	height: 1.7em;
 	margin-top: 1.6em;
 	margin-left: 2em;
 }
 
 footer section:nth-of-type(1) ul li img{
-	width: 3em;
+	width: 3.1em;
 	height: 2.5em;
 	margin: 0;
 	
 }
 
-/* navigatie */
-footer section:nth-of-type(2) ul {
+/* navigatie details*/
+
+footer details {
+	margin-inline: 2em;
+}
+footer details ul {
 	list-style: none;
 	padding: 0;
-	margin-left: 1em;
-	margin-right: 1em;
+	
+}
+footer details ul li {
+	border-bottom: var(--color-border-bottom);
+	padding-block: 1em;
 }
 
-footer section:nth-of-type(2) ul li {
-	border-bottom: solid rgb(213, 213, 213);
+footer details a {
+	text-decoration: none;
+	color: var(--sissy-boy-text-black);
+	padding: 1em;
+	font-size: 1.3em;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
-footer section:nth-of-type(2) ul li a {
+footer details summary {
+	border-bottom: var(--color-border-bottom);
+	padding-block: 1em;
+	font-size: 1.3em;
+	font-family: Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
+}
+
+footer details summary::marker {
+	display: none; 
+	content: "";
+}
+
+footer section:nth-of-type(2) {
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+footer section:nth-of-type(2) ul {
 	display: flex;
 	justify-content: space-between;
-	font-size: 0.8em;
-	color: black;
-	text-decoration: none;
-}
-footer section:nth-of-type(2) ul li a h3 {
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: lighter;
-}
 
-footer section:nth-of-type(2) ul li a p {
-	text-align: end;
-	margin-right: 2em;
-}
-
-
-/* section 2 - betaalmiddelen en mark */
-footer section:nth-of-type(3) {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-
-	display:flex;
-	flex-direction:column-reverse;
-	margin: 0;
-	margin-bottom: 1em;
-}
-
-footer section:nth-of-type(3) p {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 0.8em;
-}
-
-footer section:nth-of-type(3) ul {
-	display: flex;
-	list-style: none;
-	gap: 0.1em;
 	padding: 0;
+	margin-inline: 2em ;
+	list-style: none;
 }
 
-footer section:nth-of-type(3) ul img {
-	width: 3em;
-	height: 2em;
+footer section:nth-of-type(2) svg {
+	width: 2.8em;
+	height: auto;
 }
+
+footer > p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.8em;
+	text-align: center;
+}
+
+@media (width > 1200px) {
+	footer {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		flex-wrap: wrap;
+
+		margin-left: 5em;
+		margin-right: 5em;
+	}
+
+	footer details {
+		order: 1;
+	}
+
+	footer details summary {
+		border-bottom: none;
+		padding: 0;
+	}
+
+	footer details ul li {
+		border-bottom: none;
+	}
+
+	footer details a {
+		padding: 0;
+		color: grey;
+	}
+	
+	footer section:nth-of-type(2) {
+		width: 100%;
+		order: 0;
+		margin-inline: 20em;
+	}
+
+	footer section:nth-of-type(1) {
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+		padding-right: 3em;
+		align-self: start;
+
+		padding: 0;
+		order: 2;
+	}
+
+	footer section:nth-of-type(1) img{
+		width: 12em;
+		height: auto;
+		margin-right: 2.3em;
+	}
+	
+    footer > p {
+	    width: 100%;
+	    order: 2;
+	    text-align: center;
+	    border-top: solid 1px;
+	    padding: 2em;
+	    margin-left: 3em;
+	    margin-right: 3em;
+    }
+}
+
+
+

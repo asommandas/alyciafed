@@ -2,8 +2,7 @@
 
 //
 
-
-
+// De les
 // openen hamburger menu
 const openButton = document.querySelector("header > button");
 const deNav = document.querySelector("header nav:nth-of-type(1)");
@@ -31,3 +30,28 @@ const chatDialog = document.querySelector("main dialog");
 chatButton.addEventListener("click", () => {
   chatDialog.show();
 });
+
+// Sanne 
+// detail summary 
+
+function checkOfDetailsOpenOfDichtMoeten() {
+    const alleDetails = document.querySelectorAll("footer details");
+    console.log("Functie wordt aangeroepen");
+    
+    alleDetails.forEach(eenDetails => {
+      if(window.innerWidth > 800) {
+        eenDetails.open = true;
+      } else {
+        eenDetails.open = false;
+      }
+    } );
+  }
+  
+  // als je de pagina opent
+  checkOfDetailsOpenOfDichtMoeten();
+  
+  // als je pagine resized
+  window.onresize = checkOfDetailsOpenOfDichtMoeten;
+  
+  
+

@@ -79,6 +79,7 @@ main section:nth-of-type(2) img:nth-of-type(3) {
 /* categorieen */
 
 main section:nth-of-type(3) ul{
+	position: relative;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 1em;
@@ -86,11 +87,12 @@ main section:nth-of-type(3) ul{
 	align-items: center;
 
 	list-style: none;
+
+	z-index: 0;
 }
 
 main section:nth-of-type(3) ul li a{
 	position: relative;
-	color: var(--sissy-boy-white);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -103,11 +105,17 @@ main section:nth-of-type(3) ul li a p {
 	bottom: 0;
 	text-transform: uppercase;
 	font-family: Arial, Helvetica, sans-serif;
+	color: var(--sissy-boy-tekst-white);
+	color: var(--sissy-boy-tekst-white);
+
+	z-index: 1;
 }
 
 main section:nth-of-type(3) img {
 	width: 100%;
 	height: 100%;
+
+	filter: brightness(0.5);
 }
 
 @media (width > 800px) {
