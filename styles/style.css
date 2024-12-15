@@ -10,20 +10,22 @@
 /* CUSTOM PROPERTIES */
 /*********************/
 :root {
+	color-scheme: light dark;
+
 	/* startje */
-	--sissy-boy-text-black:#000000;
-	--sissy-boy-tekst-white:#FFFFFF;
+	--sissy-boy-text-black:light-dark(#000000, #fff);
+	--sissy-boy-tekst-white: #FFFFFF;
 	--sissy-boy-tekst-grey:grey;
 
 	--color-links-lopende-tekst:rgb(135, 165, 135);
 	--color-links-lopende-tekst:rgb(91, 109, 91);
 	--color-hover-links:rgb(135, 165, 135);
 
-	--color-background-white:#FFFFFF;
+	--color-background-white:light-dark(#FFFFFF, #222);
 	--color-background-black:#000000;
 	--color-background-licht-groen:rgb(169, 198, 169);
-	--color-background-form:#eee;
-	--color-background-checked-box:#eee;
+	--color-background-form:#FFF;
+	--color-background-checked-box:light-dark(#FFFFFF, #222);
 	
 	--color-buttons-:rgb(135, 165, 135);
 	--color-elementen-in-buttons-:rgb(58, 74, 58);
@@ -202,7 +204,7 @@ header nav:nth-of-type(1) li {
 header nav:nth-of-type(1) a {
 	text-transform: uppercase;
 	text-decoration: none;
-	color: black;
+	color: var(--sissy-boy-text-black);
 	font-family: "sissyboy-font";
 }
 
@@ -291,9 +293,11 @@ header nav:nth-of-type(2) img{
 	
 	header form label {
 		flex-grow:1;
+		align-self: stretch;
 	}
 
 	header form input {
+		background-color: var(--color-background-form);
 		font:1em;
 		padding: 0;
 		border: none;
@@ -362,6 +366,11 @@ header nav:nth-of-type(2) img{
 	}
 }
 
+@media (prefers-color-scheme:dark) {
+	header nav:nth-of-type(2) img {
+		filter: invert();
+	}
+}
 
 /*///////////////////////////////// main//////////////////////////////////////////   */
 
@@ -527,9 +536,10 @@ main button:nth-last-of-type(1) img{
 @media (width > 600px) {
 	main dialog {
 		top:2em;
-		left: 10em;
+		left: unset;
 		right: 1em;
 		bottom: 1em;
+		width:32em;
 	}
 }
 
@@ -649,6 +659,7 @@ footer section:nth-of-type(2) ul {
 footer section:nth-of-type(2) svg {
 	width: 2.8em;
 	height: auto;
+	fill: #fff;
 }
 
 footer > p {
